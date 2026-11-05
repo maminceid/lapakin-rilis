@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan Privasi Lapakin</title>
+<meta name="description" content="Kebijakan privasi aplikasi Lapakin untuk Windows.">
+<link rel="icon" href="logo.png">
+<!-- Kebijakan privasi Lapakin (PRD v2.24, syarat Microsoft Store Policies 10.5.1). Isinya harus sesuai
+     implementasi: setiap perubahan data yang disimpan atau dikirim aplikasi wajib diperbarui di sini. -->
+<style>
+  :root {
+    --latar: #eef1f4; --permukaan: #ffffff; --tinta: #1d2a33; --redup: #5b6b78; --garis: #d5dce2; --fokus: #2f6fdb;
+    --font-papan: 'Bahnschrift', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+    --font-teks: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --latar: #11181d; --permukaan: #1a232a; --tinta: #e6ecf0; --redup: #9aabb8; --garis: #2f3d47; --fokus: #78a6f5; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--latar); color: var(--tinta); font: 15px/1.65 var(--font-teks); }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1, h2 { font-family: var(--font-papan); line-height: 1.25; }
+  h1 { font-size: 30px; margin: 0; }
+  h2 { font-size: 19px; margin: 28px 0 6px; }
+  a { color: var(--fokus); }
+  .kepala { display: flex; align-items: center; gap: 14px; }
+  .kepala img { width: 52px; height: 52px; }
+  .redup { color: var(--redup); font-size: 13px; }
+  .kartu { margin-top: 24px; background: var(--permukaan); border: 1px solid var(--garis); border-radius: 12px; padding: 8px 24px 24px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kepala">
+    <img src="logo.png" alt="">
+    <div>
+      <h1>Kebijakan Privasi Lapakin</h1>
+      <p class="redup">Berlaku sejak 6 November 2026</p>
+    </div>
+  </div>
+
+  <div class="kartu">
+    <h2>Ringkasan</h2>
+    <p>Lapakin adalah aplikasi Windows untuk mengelola beberapa toko marketplace milik Anda atau klien Anda, masing-masing di profil browser yang terpisah. Semua data Lapakin disimpan di komputer Anda. Lapakin tidak memiliki akun pengguna, server, sinkronisasi cloud, iklan, maupun telemetri, dan penerbit Lapakin tidak menerima data Anda.</p>
+
+    <h2>Data yang disimpan di komputer Anda</h2>
+    <ul>
+      <li>Data profil toko: nama, marketplace, warna, tag, alamat awal, status toko, dan pengaturan fingerprint per profil.</li>
+      <li>Catatan profil, username dan password login toko yang Anda simpan, serta username dan password proxy. Semuanya dienkripsi dengan kunci yang dilindungi Windows (DPAPI), dan juga dengan master password bila Anda mengaktifkannya.</li>
+      <li>Cookie, sesi login, dan data situs untuk setiap profil, disimpan terpisah per profil seperti di browser biasa.</li>
+      <li>Riwayat aktivitas di dalam aplikasi (misalnya profil dibuka atau diubah) dan hasil cek proxy.</li>
+    </ul>
+
+    <h2>Data yang dikirim keluar perangkat</h2>
+    <ul>
+      <li><strong>Situs yang Anda buka.</strong> Profil membuka situs marketplace seperti browser biasa. Data yang Anda isi di situs tersebut diatur oleh kebijakan privasi marketplace itu sendiri.</li>
+      <li><strong>Cek proxy.</strong> Saat Anda memeriksa proxy, Lapakin meminta alamat IP keluar ke layanan <a href="https://www.ipify.org/">ipify</a> melalui proxy tersebut. Lokasi IP dicari di database offline di komputer Anda, jadi tidak dikirim ke pihak lain.</li>
+      <li><strong>Cek pembaruan (hanya installer dari situs Lapakin).</strong> Versi installer memeriksa rilis terbaru di GitHub saat Anda menekan Cek update. Versi Microsoft Store diperbarui oleh Microsoft Store dan tidak melakukan cek ini.</li>
+    </ul>
+    <p>Selain itu Lapakin tidak mengirim, menjual, maupun membagikan data Anda kepada siapa pun.</p>
+
+    <h2>Kendali Anda</h2>
+    <ul>
+      <li>Ubah atau hapus profil, login tersimpan, dan proxy kapan saja di dalam aplikasi.</li>
+      <li>Aktifkan master password untuk mengunci Lapakin.</li>
+      <li>Menghapus (uninstall) Lapakin versi Microsoft Store juga menghapus seluruh data Lapakin di komputer tersebut.</li>
+    </ul>
+
+    <h2>Anak-anak</h2>
+    <p>Lapakin ditujukan untuk penjual dan pengelola toko, bukan untuk anak di bawah 13 tahun.</p>
+
+    <h2>Perubahan dan kontak</h2>
+    <p>Bila kebijakan ini berubah, versi terbaru diterbitkan di halaman ini dengan tanggal berlaku yang baru. Pertanyaan tentang privasi dapat dikirim ke <a href="mailto:business@naeva.id">business@naeva.id</a>.</p>
+  </div>
+
+  <div class="kartu" lang="en">
+    <h2>Privacy Policy (English summary)</h2>
+    <p>Lapakin is a Windows app for managing your own (or your clients') marketplace stores in separate browser profiles. All data stays on your computer. Store logins, proxy credentials and notes are encrypted with a key protected by Windows (DPAPI) and, if enabled, your master password. Lapakin has no user accounts, servers, cloud sync, ads or telemetry. Data leaves your device only when profiles open the websites you choose, when you check a proxy (a request to ipify sent through that proxy), and, in the installer version only, when you check for updates on GitHub. Uninstalling the Microsoft Store version removes all Lapakin data. Contact: <a href="mailto:business@naeva.id">business@naeva.id</a>.</p>
+  </div>
+</main>
+</body>
+</html>
