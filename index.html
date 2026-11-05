@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unduh Lapakin</title>
+<meta name="description" content="Unduh installer Lapakin untuk Windows.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo.png">
+<!-- Halaman download Lapakin (PRD v2.21), diterbitkan di GitHub Pages repo rilis. Data rilis terbaru
+     dibaca dari API GitHub publik saat halaman dibuka; tidak ada token di halaman ini. -->
+<style>
+  :root {
+    --latar: #eef1f4; --permukaan: #ffffff; --permukaan-redup: #f6f8fa; --tinta: #1d2a33; --redup: #5b6b78;
+    --garis: #d5dce2; --berjalan: #1b7f4c; --berjalan-latar: #e3f3ea; --fokus: #2f6fdb; --peringatan-latar: #fbf1dd; --peringatan: #8a5a00;
+    --font-papan: 'Bahnschrift', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+    --font-teks: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --latar: #11181d; --permukaan: #1a232a; --permukaan-redup: #212c34; --tinta: #e6ecf0; --redup: #9aabb8;
+      --garis: #2f3d47; --berjalan: #5fd197; --berjalan-latar: #173527; --fokus: #78a6f5; --peringatan-latar: #3a2f17; --peringatan: #f0c36a;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--latar); color: var(--tinta); font: 15px/1.6 var(--font-teks); }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1, h2 { font-family: var(--font-papan); line-height: 1.2; margin: 0; }
+  a { color: var(--fokus); }
+  :focus-visible { outline: 2px solid var(--fokus); outline-offset: 2px; }
+  .kepala { display: flex; align-items: center; gap: 16px; }
+  .kepala img { width: 64px; height: 64px; }
+  .kepala h1 { font-size: 34px; }
+  .kepala p { margin: 2px 0 0; color: var(--redup); }
+  .kartu { margin-top: 28px; background: var(--permukaan); border: 1px solid var(--garis); border-radius: 12px; padding: 24px; }
+  .versi { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+  .versi h2 { font-size: 24px; }
+  .redup { color: var(--redup); font-size: 13px; }
+  .tombol { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 12px 22px; border-radius: 8px; background: var(--tinta); color: var(--permukaan); font: 600 16px var(--font-papan); text-decoration: none; }
+  .tombol:hover { opacity: .9; }
+  .tombol[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+  .catatan { margin-top: 18px; padding: 12px 14px; background: var(--permukaan-redup); border-radius: 8px; white-space: pre-line; font-size: 14px; }
+  .hash { margin-top: 16px; font-size: 13px; }
+  .hash code { display: block; margin-top: 4px; padding: 8px 10px; background: var(--permukaan-redup); border-radius: 6px; font: 12px/1.5 Consolas, monospace; overflow-wrap: anywhere; }
+  .galat { margin-top: 16px; padding: 12px 14px; border-radius: 8px; background: var(--peringatan-latar); color: var(--peringatan); font-size: 14px; }
+  ol { padding-left: 22px; margin: 12px 0 0; }
+  li { margin-top: 10px; }
+  li strong { font-family: var(--font-papan); }
+  kbd { font: 12px Consolas, monospace; padding: 1px 6px; border: 1px solid var(--garis); border-radius: 4px; background: var(--permukaan-redup); }
+  .info { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: var(--berjalan-latar); color: var(--berjalan); font-size: 14px; }
+  footer { margin-top: 28px; color: var(--redup); font-size: 13px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header class="kepala">
+    <img src="logo.png" alt="" width="64" height="64">
+    <div>
+      <h1>Lapakin</h1>
+      <p>Kelola banyak toko marketplace dalam satu aplikasi, untuk Windows 10/11 (64-bit).</p>
+    </div>
+  </header>
+
+  <section class="kartu" aria-labelledby="judul-versi">
+    <div class="versi">
+      <h2 id="judul-versi">Memuat versi terbaru…</h2>
+      <span class="redup" id="tanggal"></span>
+    </div>
+    <a class="tombol" id="unduh" href="https://github.com/maminceid/lapakin-rilis/releases/latest" aria-disabled="true">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12"/></svg>
+      <span id="label-unduh">Unduh untuk Windows</span>
+    </a>
+    <div class="catatan" id="catatan" hidden></div>
+    <div class="hash" id="blok-hash" hidden>
+      Kode cek SHA256 installer (untuk memastikan berkas asli):
+      <code id="hash"></code>
+    </div>
+    <p class="galat" id="galat" hidden>
+      Versi terbaru belum bisa dimuat. Unduh langsung dari
+      <a href="https://github.com/maminceid/lapakin-rilis/releases/latest">halaman rilis</a>.
+    </p>
+  </section>
+
+  <section class="kartu" aria-labelledby="judul-pasang">
+    <h2 id="judul-pasang" style="font-size:20px">Cara memasang</h2>
+    <ol>
+      <li><strong>Jalankan installer</strong> yang baru diunduh. Pemasangan tidak memerlukan hak administrator.</li>
+      <li><strong>Bila muncul "Windows protected your PC"</strong>, klik <em>More info</em> lalu <em>Run anyway</em>. Peringatan ini muncul karena installer Lapakin belum bertanda tangan digital.</li>
+      <li><strong>Bila Windows memblokir tanpa pilihan Run anyway</strong>, buka <em>Windows Security → App &amp; browser control → Smart App Control</em>. Bila statusnya On atau Evaluation, bicarakan dengan pemilik laptop sebelum mematikannya, karena fitur itu tidak bisa dinyalakan kembali tanpa memasang ulang Windows.</li>
+      <li><strong>Cek keaslian berkas (opsional)</strong>: di folder installer, buka PowerShell lalu jalankan <kbd id="perintah-hash">Get-FileHash .\Lapakin-Setup-&lt;versi&gt;.exe</kbd>. Hasilnya harus sama dengan kode cek di atas.</li>
+    </ol>
+    <p class="info">Setelah terpasang, versi berikutnya cukup diperbarui dari dalam aplikasi: <em>Pengaturan → Pembaruan aplikasi → Cek update</em>.</p>
+  </section>
+
+  <footer>
+    Semua versi: <a href="https://github.com/maminceid/lapakin-rilis/releases">daftar rilis</a>.
+  </footer>
+</main>
+<script>
+  // Rilis terbaru (bukan draft/prerelease) dari API GitHub publik.
+  (async () => {
+    const el = (id) => document.getElementById(id);
+    try {
+      const res = await fetch('https://api.github.com/repos/maminceid/lapakin-rilis/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
+      if (!res.ok) throw new Error(String(res.status));
+      const rilis = await res.json();
+      const versi = String(rilis.tag_name || '').replace(/^v/, '');
+      const installer = (rilis.assets || []).find((a) => a.name === `Lapakin-Setup-${versi}.exe`);
+      if (!versi || !installer) throw new Error('aset tidak lengkap');
+      el('judul-versi').textContent = `Versi ${versi}`;
+      if (rilis.published_at) {
+        el('tanggal').textContent = `Dirilis ${new Date(rilis.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+      }
+      const unduh = el('unduh');
+      unduh.href = installer.browser_download_url;
+      unduh.removeAttribute('aria-disabled');
+      el('label-unduh').textContent = `Unduh untuk Windows (${(installer.size / 1048576).toFixed(0)} MB)`;
+      el('perintah-hash').textContent = `Get-FileHash .\\${installer.name}`;
+      if (rilis.body && rilis.body.trim()) {
+        el('catatan').textContent = rilis.body.trim();
+        el('catatan').hidden = false;
+      }
+      const digest = typeof installer.digest === 'string' && installer.digest.startsWith('sha256:') ? installer.digest.slice(7) : null;
+      const sums = (rilis.assets || []).find((a) => a.name === 'SHA256SUMS.txt');
+      if (digest) {
+        el('hash').textContent = digest.toUpperCase();
+        el('blok-hash').hidden = false;
+      } else if (sums) {
+        // Cadangan bila API tidak mengirim digest: kode cek dibaca dari berkas SHA256SUMS.txt rilis.
+        el('hash').innerHTML = '';
+        const tautan = document.createElement('a');
+        tautan.href = sums.browser_download_url;
+        tautan.textContent = 'SHA256SUMS.txt';
+        el('hash').append('Lihat ', tautan);
+        el('blok-hash').hidden = false;
+      }
+    } catch {
+      el('judul-versi').textContent = 'Lapakin untuk Windows';
+      el('unduh').removeAttribute('aria-disabled');
+      el('galat').hidden = false;
+    }
+  })();
+</script>
+</body>
+</html>
